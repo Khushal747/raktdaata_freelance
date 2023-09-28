@@ -73,9 +73,10 @@
   "Please enter hospital name": "Please enter hospital name",
   "You have successfully registered!": "You have successfully registered!",
   "Please upload a prescription": "Please upload a prescription",
-
-
-
-
+  "Forgot password ?": "Forgot password ?",
+"Don’t have an account ? Signup": "Don’t have an account ? Signup",
+  "Hello,": "Hello",
+  "LogOut":"LogOut",
+  "Already Registered? HomePage":"Already Registered? HomePage"
 
 }

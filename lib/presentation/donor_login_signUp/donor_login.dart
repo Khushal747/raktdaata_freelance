@@ -17,7 +17,6 @@ import '../../theme/theme_helper.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_imageView.dart';
 import '../../widgets/custom_textfrom_field.dart';
-import '../signUpAPage/signUpPage.dart';
 import '../widgets/custom_progress_bar.dart';
 import 'donor_signUp.dart';
 
@@ -107,7 +106,7 @@ class _Donor_LoginState extends State<Donor_Login> {
                         top: 19,
                       ),
                       textStyle: TextThemeHelper.bodyLargePrimaryContainer,
-                      hintText: "Email",
+                      hintText: "Email".trTrans,
                       hintStyle: TextThemeHelper.bodyLargePrimaryContainer,
                       textInputAction: TextInputAction.next,
                     ),
@@ -118,7 +117,7 @@ class _Donor_LoginState extends State<Donor_Login> {
                         top: 22,
                       ),
                       textStyle: TextThemeHelper.bodyLargePrimaryContainer,
-                      hintText: "Password",
+                      hintText: "Password".trTrans,
                       hintStyle: TextThemeHelper.bodyLargePrimaryContainer,
                       textInputType: TextInputType.visiblePassword,
                       obscureText: !_passwownVisible,
@@ -154,7 +153,7 @@ class _Donor_LoginState extends State<Donor_Login> {
                       height: getVerticalSize(
                         50,
                       ),
-                      text: "Login",
+                      text: "Login".trTrans,
                       margin: getMargin(
                         top: 21,
                       ),
@@ -186,7 +185,7 @@ class _Donor_LoginState extends State<Donor_Login> {
                           top: 13,
                         ),
                         child: Text(
-                          "Forgot password ?",
+                          "Forgot password ?".trTrans,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: TextThemeHelper
@@ -210,7 +209,7 @@ class _Donor_LoginState extends State<Donor_Login> {
                             child: Padding(
                               padding: getPadding(all: 10),
                               child: Text(
-                                "Don’t have an account ? Signup",
+                                "Don’t have an account ? Signup".trTrans,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: TextThemeHelper

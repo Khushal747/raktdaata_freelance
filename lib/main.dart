@@ -53,12 +53,10 @@ Future<void> main() async {
   // ThemeHelper().changeTheme('primary');
   runApp(
       EasyLocalization(
-          supportedLocales: const [Locale('en', 'US'), Locale('hi', 'IN')],
+          supportedLocales:  [Locale('en', 'US'), Locale('hi', 'IN')],
           path: 'assets/translations', // <-- change the path of the translation files
-          fallbackLocale: const Locale('en', 'US'),
-          child:
-           // MessageSender(),
-          ConfigScreen()
+          fallbackLocale:  Locale('en', 'US'),
+          child: ConfigScreen()
       )
   );
 }

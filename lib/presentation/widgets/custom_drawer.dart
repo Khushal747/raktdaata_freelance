@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:raktdata_app/core/app_colors.dart';
 import 'package:raktdata_app/widgets/size_ext.dart';
+import 'package:raktdata_app/widgets/translate_extension.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../View_model/auth_admin.dart';
@@ -41,7 +42,7 @@ class CustomDrawer extends StatelessWidget {
               decoration: BoxDecoration(color: AppColors.deepRed),
               accountName:
               Text(
-                "Hello,",
+                "Hello,".trTrans,
                 style: TextStyle(fontSize: 18),
               ),
               accountEmail:FutureBuilder<String>(
@@ -93,7 +94,7 @@ class CustomDrawer extends StatelessWidget {
               leading:  Icon(Icons.logout,
               color: AppColors.black,
               ),
-              title: const Text('LogOut'),
+              title:  Text('LogOut'.trTrans),
               onTap: () {
                 _authViewModel.signOut();
               },

@@ -51,10 +51,15 @@ class ImageConstant {
   static String eyeClosed = 'assets/image_icons/eyeClosed.svg';
 
   static String tickCircle = 'assets/image_icons/tickCircle.svg';
+
   static String tickCircle1 = 'assets/image_icons/tick-circle.svg';
 
   static String donatorImg = 'assets/image_icons/donator.png';
+
   static String donatorImg1 = 'assets/image_icons/donatorImg1.png';
+
+  static String language = 'assets/image_icons/language.png';
+
   static String donatorImg2 = 'assets/image_icons/donatorImg2.png';
 
   static String imgRireplay15fill = 'assets/images/img_rireplay15fill.svg';

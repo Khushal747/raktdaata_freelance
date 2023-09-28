@@ -1,3 +1,5 @@
+import 'package:raktdata_app/widgets/translate_extension.dart';
+
 class AppStrings {
   static const String montserratFont = "Montserrat";
   static const String emptyString = "";
@@ -7,8 +9,7 @@ class AppStrings {
   static const String noInternet = "No Internet";
   static const String invalidFormat = "Invalid Format";
 
-  static const String somethingWentWrongPleaseTryAgainLater =
+  static  String somethingWentWrongPleaseTryAgainLater =
       "Something went wrong. Please try again later";
-
   static String themeSp = "currentThemeSp";
 }

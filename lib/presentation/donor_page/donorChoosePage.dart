@@ -58,7 +58,7 @@ class DonorPage extends StatelessWidget {
                       height: 10.Sh,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
+                      width: (MediaQuery.of(context).size.width * 0.8).Sw,
                       child: Text(
                         "A drop of blood can save a life!".trTrans,
                         overflow: TextOverflow.ellipsis,
@@ -72,10 +72,10 @@ class DonorPage extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 60,
+                height: 60.Sh,
                 decoration: BoxDecoration(
                   color: AppColors.deepRed,
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(18.r),
                 ),
                 child: Row(
                   children: [

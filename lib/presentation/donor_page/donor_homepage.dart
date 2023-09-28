@@ -41,7 +41,7 @@ class _DonorHomePageState extends State<DonorHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Donor").tr(),
+        title:  Text("Donor".trTrans),
         backgroundColor: Colors.red.shade900,
         centerTitle: true,
       ),

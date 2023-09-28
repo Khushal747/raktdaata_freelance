@@ -262,7 +262,9 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
                                     height: getSize(30),
                                   ),
                                   onTap: () {
+
                                     _needViewModel.deleteDocument(widget.docId,true);
+                                    setState(() {});
                                     // Get.back();
                                   },
                                 ),
@@ -281,6 +283,7 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
                                   ),
                                   onTap: () {
                                     _needViewModel.deleteDocument(widget.docId,false);
+                                    setState(() {});
                                     // Get.back();
                                   },
                                 ),

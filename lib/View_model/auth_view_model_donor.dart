@@ -225,7 +225,7 @@ class AuthViewModel extends DisposableProvider {
 
       Get.offAll(() => FrontPage());
     } catch (e) {
-      Util.getSnackBar(AppStrings.somethingWentWrongPleaseTryAgainLater);
+      Util.getSnackBar(AppStrings.somethingWentWrongPleaseTryAgainLater.trTrans);
       print('Error signing out: $e');
     }
     setLoading(false);

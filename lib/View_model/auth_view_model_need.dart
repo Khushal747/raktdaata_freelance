@@ -163,7 +163,7 @@ class AuthViewModelNeed extends DisposableProvider {
         // List<String> phoneNumbers = ['917477015841', '918770820133', '919399767395'];
         // await sendWhatsAppMessage(phoneNumbers);
 
-         // sendWhatsAppMessage();
+          await sendWhatsAppMessage();
 
         Util.getSnackBar(
           'You have successfully registered!'.trTrans,

@@ -1,24 +1,17 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:raktdata_app/core/app_colors.dart';
 import 'package:raktdata_app/widgets/size_ext.dart';
-import 'package:raktdata_app/widgets/splash_screen.dart';
 import 'package:raktdata_app/widgets/translate_extension.dart';
-
 import '../../View_model/auth_admin.dart';
 import '../../core/utils/image_constant.dart';
 import '../../core/utils/size_utils.dart';
-import '../../View_model/auth_view_model_donor.dart';
 import '../../theme/app_decoration.dart';
 import '../../theme/button_theme_helper.dart';
 import '../../theme/text_theme_helper.dart';
-import '../../theme/theme_helper.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_imageView.dart';
 import '../../widgets/custom_textfrom_field.dart';
-import '../signUpAPage/signUpPage.dart';
 import '../widgets/custom_progress_bar.dart';
 
 
@@ -107,8 +100,9 @@ class _AdminLoginState extends State<AdminLogin> {
                         top: 19,
                       ),
                       textStyle: TextThemeHelper.bodyLargePrimaryContainer,
-                      hintText: "Email",
+                      hintText: "Email".trTrans,
                       hintStyle: TextThemeHelper.bodyLargePrimaryContainer,
+                      textInputType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                     ),
                     CustomTextFormField(
@@ -118,7 +112,7 @@ class _AdminLoginState extends State<AdminLogin> {
                         top: 22,
                       ),
                       textStyle: TextThemeHelper.bodyLargePrimaryContainer,
-                      hintText: "Password",
+                      hintText: "Password".trTrans,
                       hintStyle: TextThemeHelper.bodyLargePrimaryContainer,
                       textInputType: TextInputType.visiblePassword,
                       obscureText: !_passwownVisible,
@@ -154,7 +148,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       height: getVerticalSize(
                         50,
                       ),
-                      text: "Login",
+                      text: "Login".trTrans,
                       margin: getMargin(
                         top: 21,
                       ),
@@ -179,48 +173,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       buttonTextStyle:
                       TextThemeHelper.titleMediumNotoSansPrimaryContainer,
                     ),
-                    // Align(
-                    //   alignment: Alignment.center,
-                    //   child: Padding(
-                    //     padding: getPadding(
-                    //       top: 13,
-                    //     ),
-                    //     child: Text(
-                    //       "Forgot password ?",
-                    //       overflow: TextOverflow.ellipsis,
-                    //       textAlign: TextAlign.left,
-                    //       style: TextThemeHelper
-                    //           .titleSmallNotoSansPrimaryContainer,
-                    //     ),
-                    //   ),
-                    // ),
-                    // Align(
-                    //   alignment: Alignment.center,
-                    //   child: Padding(
-                    //     padding: getPadding(
-                    //       top: 152,
-                    //     ),
-                    //     child: GestureDetector(
-                    //       onTap: () {
-                    //         Get.to(() => DonorSignUp());
-                    //         // SplashScreen());
-                    //       },
-                    //       child: Container(
-                    //         color: Colors.transparent,
-                    //         child: Padding(
-                    //           padding: getPadding(all: 10),
-                    //           child: Text(
-                    //             "Don’t have an account ? Signup",
-                    //             overflow: TextOverflow.ellipsis,
-                    //             textAlign: TextAlign.left,
-                    //             style: TextThemeHelper
-                    //                 .titleSmallNotoSansPrimaryContainer,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
+
                   ],
                 ),
               ),

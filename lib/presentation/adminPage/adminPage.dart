@@ -71,13 +71,7 @@ class _AdminPageState extends State<AdminPage> {
                     style: TextThemeHelper.titleBoldBlackContainer_3,
                     // style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
                   ),
-                  // Text(
-                  //   'Admin'.trTrans,
-                  //   overflow: TextOverflow.ellipsis,
-                  //   textAlign: TextAlign.left,
-                  //   style: TextThemeHelper.titleBoldBlackContainer_3,
-                  //   // GoogleFonts.bebasNeue(fontSize: 72),
-                  // ),
+
                 ],
               ),
             ),
@@ -134,8 +128,7 @@ class _AdminPageState extends State<AdminPage> {
                     return GridView.builder(
                         itemCount: _needViewModel.requirementDetails.length,
                         padding: EdgeInsets.symmetric(horizontal: 10.Sw),
-                        gridDelegate:
-                             SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 1,
                           childAspectRatio: 1 / 1.1.Sh, //aspect ratio dekhna h
                         ),
