@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608936793162",
+    "project_id": "raktdaata-b759b",
+    "storage_bucket": "raktdaata-b759b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608936793162:android:36eeedda0e30698cebc2b3",
+        "android_client_info": {
+          "package_name": "com.example.raktdata_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608936793162-sa89ob8c99sdf2pf7g4nqna6uuh7vos1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC8XgbqEFsKXEbLCaeAnq112PSPZgUjmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608936793162-sa89ob8c99sdf2pf7g4nqna6uuh7vos1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

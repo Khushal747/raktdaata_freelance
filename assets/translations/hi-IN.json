@@ -1,0 +1,29 @@
+{
+  "Login": "लॉगिन",
+  "Email": "ईमेल",
+  "Sign Up": "साइन अप",
+  "Name": "नाम",
+  "City": "शहर",
+  "Mobile Number": "मोबाइल नंबर",
+  "Blood Group": "रक्त समूह",
+  "last blood donation_date": "आख़िरी रक्त दान की तारीख",
+  "Password": "पासवर्ड",
+  "Confirm Password": "पासवर्ड की पुष्टि करें",
+
+  "Patient's name": "रोगी का नाम",
+  "Disease": "रोग",
+  "Hospital's Name": "अस्पताल का नाम",
+  "Attender's name": "देखभालकर्ता का नाम",
+  "date": "तारीख",
+
+  "submit": "प्रस्तुत करें",
+
+  "home": "होम",
+
+  "Need":  "आवश्यकता",
+
+  "Shri Bijasan Maala Seva Mandal":"श्री बीजासन माला सेवा मंडल",
+  "Bijasan Mata Mandir,Indore": "बीजासन माता मंदिर, इंदौर",
+  "Donor": "दाता",
+  "Admin": "प्रशासक"
+}
