@@ -398,7 +398,8 @@ class _CustomTextFormField_1State extends State<CustomTextFormField_1> {
             context: Get.context!,
             initialDate: DateTime.now(),
             firstDate: DateTime(2015, 8),
-            lastDate: DateTime.now().add(Duration(days: 365)),
+            lastDate: DateTime.now(),
+            // DateTime.now().add(Duration(days: 365)),
           );
           if (picked != null) {
             controller.text = picked.formatDate;
@@ -412,23 +413,23 @@ class _CustomTextFormField_1State extends State<CustomTextFormField_1> {
         children: [
           GestureDetector(
             behavior: HitTestBehavior.translucent,
-            onTap: () async {
-              File? file = await pickFile();
-              if (file != null) {
-                widget.onFilePicked!(file);
-                 // controller.text = file.fileName;
-                setState(() {});
-              }
-            },
-          // onTap: () async {
-          //   File? file = await pickFile();
-          //   if (file != null) {
-          //     widget.onFilePicked!(file);
-          //     String fileName = file.path.split('/').last; // Get the file name from the path
-          //     controller.text = fileName;
-          //     setState(() {});
-          //   }
-          // },
+            // onTap: () async {
+            //   File? file = await pickFile();
+            //   if (file != null) {
+            //     widget.onFilePicked!(file);
+            //      // controller.text = file.fileName;
+            //     setState(() {});
+            //   }
+            // },
+          onTap: () async {
+            File? file = await pickFile();
+            if (file != null) {
+              widget.onFilePicked!(file);
+              String fileName = file.path.split('/').last; // Get the file name from the path
+              controller.text = fileName;
+              setState(() {});
+            }
+          },
 
           child: _buildTextFormFieldWidget(true),
           ),
@@ -456,30 +457,24 @@ class _CustomTextFormField_1State extends State<CustomTextFormField_1> {
       FilePickerResult? result = await FilePicker.platform.pickFiles();
 
       if (result != null) {
-        if (result.files.single.size < 3 * 1024 * 1024) {
-          //check size is smalller then 32 MB
+        int maxSize = 3 * 1024 * 1024; // 3MB in bytes
+
+        if (result.files.single.size <= maxSize) {
           String path = result.files.single.path ?? "";
-          if (path.isNotEmpty) {
+
+          // Check if the file is in jpg format
+          if (path.isNotEmpty && path.toLowerCase().endsWith(".jpg")) {
             return File(path);
+          } else {
+            Util.getSnackBar("Please select a file in jpg format".trTrans);
           }
         } else {
-          Util.getSnackBar("Please select a file with size less than 3 mb".trTrans);
+          Util.getSnackBar("Please select a file with size less than 3MB".trTrans);
         }
       }
 
       return null;
 
-      // ImageSource? source = await Util.selectImageOptions();
-      // if (source != null) {
-      //   XFile? pickedFile = await ImagePicker().pickImage(source: source);
-      //
-      //   if (pickedFile == null) {
-      //     return null;
-      //   }
-      //
-      //   File file = File(pickedFile.path);
-      //   return file;
-      // }
     } on PlatformException catch (e) {
       print('Error: ${e.toString()}');
       return null;
@@ -488,32 +483,7 @@ class _CustomTextFormField_1State extends State<CustomTextFormField_1> {
       return null;
     }
   }
-  // Future<File?> pickFile() async {
-  //   try {
-  //     FilePickerResult? result = await FilePicker.platform.pickFiles();
-  //
-  //     if (result != null) {
-  //       if (result.files.single.size < 3 * 1024 * 1024) {
-  //         // Check size is smaller than 3 MB
-  //         Uint8List bytes = result.files.single.bytes ?? Uint8List(0);
-  //         if (bytes.isNotEmpty) {
-  //           Directory tempDir = await getTemporaryDirectory();
-  //           String tempPath = tempDir.path;
-  //           String fileName = "${DateTime.now().millisecondsSinceEpoch}.jpg";
-  //           String filePath = "$tempPath/$fileName";
-  //           await File(filePath).writeAsBytes(bytes);
-  //           return File(filePath);
-  //         }
-  //       } else {
-  //         Util.getSnackBar("Please select a file with size less than 3 mb".trTrans);
-  //       }
-  //     }
-  //   } catch (e) {
-  //     print('Error picking file: $e');
-  //   }
-  //
-  //   return null; // Return null if an error occurs or if no file is selected
-  // }
+
 
   void setupVariables() {
     if (widget.isObscureText || widget.isFilePicker || widget.isDatePicker) {

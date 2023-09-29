@@ -77,6 +77,10 @@
 "Don’t have an account ? Signup": "Don’t have an account ? Signup",
   "Hello,": "Hello",
   "LogOut":"LogOut",
-  "Already Registered? HomePage":"Already Registered? HomePage"
+  "Already Registered? HomePage":"Already Registered? HomePage",
+  "Admin Login": "Admin Login",
+  "Donor Login": "Donor Login",
+  "Please select a file in jpg format": "Please select a file in jpg format",
+  "Please select a file with size less than 3MB": "Please select a file with size less than 3MB"
 
 }

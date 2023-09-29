@@ -23,6 +23,7 @@ class _AdminPageState extends State<AdminPage> {
 
   void initState() {
     super.initState();
+
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
         print("Fetching data...");
@@ -47,7 +48,7 @@ class _AdminPageState extends State<AdminPage> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.white),
-        backgroundColor: AppColors.deepRed,
+        backgroundColor: AppColors.Red700,
       ),
       drawer: CustomDrawer(),
       // Colors.grey[300],
@@ -56,11 +57,9 @@ class _AdminPageState extends State<AdminPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            // SizedBox(height: 20.Sh),
-
-            // welcome home
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.Sw,vertical: 20.Sh),
+              padding: getPadding(left: 10,right: 10,top:15,bottom: 0.0),
+              // EdgeInsets.symmetric(horizontal: 10.Sw,vertical: 15.Sh),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -79,7 +78,7 @@ class _AdminPageState extends State<AdminPage> {
             // SizedBox(height: 25.Sh),
 
             Padding(
-              padding: getPadding(left: 10.Sh,right: 10.Sh,top: 10.Sh),
+              padding: getPadding(left: 10.Sh,right: 10.Sh,top: 0.Sh),
               // EdgeInsets.symmetric(horizontal: 40.0.Sw,vertical: 25.Sh),
               child: const Divider(
                 thickness: 1,
@@ -90,71 +89,52 @@ class _AdminPageState extends State<AdminPage> {
             // SizedBox(height: 25.Sh),
 
             // smart devices grid
-            Padding(
-              padding: getPadding(
-                  left: 10.Sw,
-                  right: 10.Sw,
-                  bottom: 10.Sh),
-              // EdgeInsets.symmetric(horizontal: horizontalPadding,vertical: 10.Sh),
-              child: Column(
-                children: [
-                  Text(
-                    "Requirement".trTrans,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.left,
-                    style: TextThemeHelper.titleBoldBlackContainer_3,
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: getPadding(
+            //       left: 10.Sw,
+            //       right: 10.Sw,
+            //       bottom: 10.Sh),
+            //   // EdgeInsets.symmetric(horizontal: horizontalPadding,vertical: 10.Sh),
+            //   child: Column(
+            //     children: [
+            //       Text(
+            //         "Requirement".trTrans,
+            //         overflow: TextOverflow.ellipsis,
+            //         textAlign: TextAlign.left,
+            //         style: TextThemeHelper.titleBoldBlackContainer_3,
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
             Expanded(
-              child: FutureBuilder<void>(
-                future: Future<void>.value(
-                    null), // Use a resolved Future instead of _needViewModel.fetchData()
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    // While waiting for data to be fetched
-                    return Center(child: CircularProgressIndicator());
-                  } else if (snapshot.hasError) {
-                    print("1212112122112122112");
-                    print(snapshot.hasData);
-                    // If there's an error
-                    return Center(child: Text('Error: ${snapshot.error}'));
-                  } else {
-                    print("333434343434343434");
-                    print(snapshot.hasData);
-                    // If data is successfully fetched, display the GridView
-                    return GridView.builder(
-                        itemCount: _needViewModel.requirementDetails.length,
-                        padding: EdgeInsets.symmetric(horizontal: 10.Sw),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                          childAspectRatio: 1 / 1.1.Sh, //aspect ratio dekhna h
-                        ),
-                        itemBuilder: (context, index) {
-                          return DisplayCardWidget(
-                            patientName: _needViewModel.requirementDetails[index].patientName,
-                            disease: _needViewModel.requirementDetails[index].disease,
-                            hospitalName: _needViewModel.requirementDetails[index].hospitalName,
-                            mobileNumber: _needViewModel.requirementDetails[index].mobileNumber,
-                            city: _needViewModel.requirementDetails[index].city,
-                            bloodGroup: _needViewModel.requirementDetails[index].bloodGroup,
-                            date: _needViewModel.requirementDetails[index].date,
-                            // Assuming date is a DateTime object
-                            bloodUnits: _needViewModel.requirementDetails[index].bloodUnits,
-                            attendersName: _needViewModel.requirementDetails[index].attendersName,
-                            prescriptionUrl: _needViewModel.requirementDetails[index].prescriptionUrl,
-                            docId: _needViewModel.requirementDetails[index].docId,
-                          );
-                        });
-                  }
+              child: ListView.builder(
+                itemCount: _needViewModel.requirementDetails.length,
+                padding: EdgeInsets.symmetric(horizontal: 10.Sw, vertical: 2.Sh),
+                itemBuilder: (context, index) {
+                  return DisplayCardWidget(
+                    patientName: _needViewModel.requirementDetails[index].patientName,
+                    disease: _needViewModel.requirementDetails[index].disease,
+                    hospitalName: _needViewModel.requirementDetails[index].hospitalName,
+                    mobileNumber: _needViewModel.requirementDetails[index].mobileNumber,
+                    city: _needViewModel.requirementDetails[index].city,
+                    bloodGroup: _needViewModel.requirementDetails[index].bloodGroup,
+                    date: _needViewModel.requirementDetails[index].date,
+                    // Assuming date is a DateTime object
+                    bloodUnits: _needViewModel.requirementDetails[index].bloodUnits,
+                    attendersName: _needViewModel.requirementDetails[index].attendersName,
+                    prescriptionUrl: _needViewModel.requirementDetails[index].prescriptionUrl,
+                    docId: _needViewModel.requirementDetails[index].docId,
+                  );
                 },
-              ),
+              )
+
             ),
           ],
         ),
       ),
     );
   }
+
+
 }

@@ -60,6 +60,7 @@ print("documnetId $documentId");
       await storageRef.delete();
 
        notifyListeners();
+      fetchData();
       setLoading(false);
 
       if(status) {

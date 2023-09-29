@@ -44,13 +44,13 @@ class _AdminLoginState extends State<AdminLogin> {
       key: _scaffoldkey,
       appBar: AppBar(
         title: Text(
-          "Login".trTrans,
+          "Admin Login".trTrans,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.left,
           style: TextThemeHelper.titleBoldPrimaryContainer_3,
         ),
 
-        backgroundColor: AppColors.deepRed,
+        backgroundColor: AppColors.Red700,
         centerTitle: true,
       ),
       body: CustomProgressBar(
@@ -152,12 +152,14 @@ class _AdminLoginState extends State<AdminLogin> {
                       margin: getMargin(
                         top: 21,
                       ),
+
                       onTap: () {
                         _authViewModel.login(
                           emailController.text,
                           passwordController.text,
                         );
                       },
+
                       buttonStyle: ButtonThemeHelper
                           .gradientnameblueA200namepurple900
                           .copyWith(

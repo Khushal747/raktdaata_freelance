@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:provider/provider.dart';
 import 'package:raktdata_app/core/app_colors.dart';
 import 'package:raktdata_app/core/app_string.dart';
+import 'package:raktdata_app/presentation/donor_login_signUp/donor_login.dart';
 import 'package:raktdata_app/widgets/size_ext.dart';
 import 'package:raktdata_app/widgets/translate_extension.dart';
 
@@ -22,7 +23,6 @@ import '../../widgets/custom_textfrom_field.dart';
 import '../../widgets/util.dart';
 import '../widgets/custom_progress_bar.dart';
 
-
 class DonorSignUp extends StatefulWidget {
   const DonorSignUp({Key? key}) : super(key: key);
 
@@ -39,7 +39,7 @@ class _DonorSignUpState extends State<DonorSignUp> {
 
   TextEditingController dateController = TextEditingController();
 
-   TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
 
@@ -54,9 +54,8 @@ class _DonorSignUpState extends State<DonorSignUp> {
   bool _passwordVisible = false;
   bool _confirmPasswordVisible = false;
 
-   String selectedBloodGroup = AppStrings.NA;
-   DateTime ?selectedDate = null;
-
+  String selectedBloodGroup = AppStrings.NA;
+  DateTime? selectedDate = null;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +69,7 @@ class _DonorSignUpState extends State<DonorSignUp> {
           textAlign: TextAlign.left,
           style: TextThemeHelper.titleBoldPrimaryContainer_3,
         ),
-        backgroundColor: Colors.red.shade900,
+        backgroundColor:AppColors.Red700,
         centerTitle: true,
       ),
       body: Container(
@@ -106,7 +105,6 @@ class _DonorSignUpState extends State<DonorSignUp> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-
                         Container(
                           margin: getMargin(
                             left: 1,
@@ -116,24 +114,24 @@ class _DonorSignUpState extends State<DonorSignUp> {
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Name".trTrans,
                                 controller: nameController,
                                 maxLines: 1,
                                 textInputAction: TextInputAction.next,
                                 textInputType: TextInputType.text,
-                                applyValidator:true,
-                                validator:nameValidator(),
-                                    // (name) => name!.length < 3 ? 'Name should be at least  3 characters long' : null,
-
-
+                                applyValidator: true,
+                                // (name) => name!.length < 3 ? 'Name should be at least  3 characters long' : null,
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "City".trTrans,
                                 controller: cityController,
                                 maxLines: 1,
@@ -143,16 +141,17 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                 ),
                                 textInputType: TextInputType.text,
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
-
+                                applyValidator: true,
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Mobile Number".trTrans,
                                 prefix: Container(
                                   width: 3.Sw,
-                                   // color: Colors.red,
+                                  // color: Colors.red,
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: getPadding(left: 10),
@@ -167,19 +166,16 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                 ),
                                 textInputType: TextInputType.phone,
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
-
-
+                                applyValidator: true,
                               ),
 
                               Padding(
                                 padding: getPadding(top: 17),
                                 child: CustomDropDown(
-
-                                  variant: DropDownVariant.OutlineBluegray5002_1,
+                                  variant:
+                                      DropDownVariant.OutlineBluegray5002_1,
                                   title: "Blood Group".trTrans,
                                   items: const [
-
                                     'A+',
                                     'A-',
                                     'B+',
@@ -198,20 +194,21 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                     'A2B-',
                                     'Bombay Blood Group',
                                     'INRA',
-                                    'Don\'t Know'
                                   ],
                                   selectedItem: selectedBloodGroup,
-                                  applyValidator:true,
+                                  applyValidator: true,
                                   onChanged: (String bloodGroup) {
                                     setState(() {
-                                      selectedBloodGroup =bloodGroup;
+                                      selectedBloodGroup = bloodGroup;
                                     });
                                   },
                                 ),
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Last Blood Donation Date".trTrans,
                                 controller: dateController,
                                 maxLines: 1,
@@ -219,18 +216,19 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                   top: 17,
                                   // bottom: 17,
                                 ),
-                                 textInputType: TextInputType.datetime,
+                                textInputType: TextInputType.datetime,
                                 isDatePicker: true,
-                                onDateSelected: (DateTime date){
-                                  selectedDate=date;
+                                onDateSelected: (DateTime date) {
+                                  selectedDate = date;
                                 },
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
-
+                                applyValidator: true,
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Email".trTrans,
                                 controller: emailController,
                                 maxLines: 1,
@@ -238,14 +236,15 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                   top: 17,
                                   // bottom: 17,
                                 ),
-                                 textInputType: TextInputType.emailAddress,
+                                textInputType: TextInputType.emailAddress,
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
-
+                                applyValidator: true,
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Password".trTrans,
                                 controller: passwordController,
                                 maxLines: 1,
@@ -253,9 +252,9 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                   top: 17,
                                   // bottom: 17,
                                 ),
-                                 textInputType: TextInputType.text,
+                                textInputType: TextInputType.text,
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
+                                applyValidator: true,
                                 isObscureText: !_passwordVisible,
                                 suffix: GestureDetector(
                                   onTap: () {
@@ -276,8 +275,7 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                       height: 25.Sh,
                                     ),
                                   ),
-
-                              ),
+                                ),
                                 suffixConstraints: BoxConstraints(
                                   maxHeight: getVerticalSize(
                                     46,
@@ -285,8 +283,10 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                 ),
                               ),
                               CustomTextFormField_1(
-                                variant: TextFormFieldVariant.OutlineBluegray5002_1,
-                                 fontStyle: TextFormFieldFontStyle.MontserratMedium16,
+                                variant:
+                                    TextFormFieldVariant.OutlineBluegray5002_1,
+                                fontStyle:
+                                    TextFormFieldFontStyle.MontserratMedium16,
                                 title: "Confirm Password".trTrans,
                                 controller: confirmPasswordController,
                                 maxLines: 1,
@@ -294,14 +294,15 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                   top: 17,
                                   // bottom: 17,
                                 ),
-                                 textInputType: TextInputType.text,
+                                textInputType: TextInputType.text,
                                 textInputAction: TextInputAction.next,
-                                applyValidator:true,
-                                isObscureText:!_confirmPasswordVisible,
+                                applyValidator: true,
+                                isObscureText: !_confirmPasswordVisible,
                                 suffix: GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _confirmPasswordVisible = !_confirmPasswordVisible;
+                                      _confirmPasswordVisible =
+                                          !_confirmPasswordVisible;
                                     });
                                   },
                                   child: Container(
@@ -317,13 +318,12 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                       height: 25.Sh,
                                     ),
                                   ),
-
-                              ),
+                                ),
                                 suffixConstraints: BoxConstraints(
-                                      maxHeight: getVerticalSize(
-                                        46,
-                                      ),
-                                    ),
+                                  maxHeight: getVerticalSize(
+                                    46,
+                                  ),
+                                ),
                               ),
 
                               CustomElevatedButton(
@@ -347,7 +347,6 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                     selectedDate,
                                     passwordController.text,
                                     confirmPasswordController.text,
-
                                   );
                                 },
                                 buttonStyle: ButtonThemeHelper
@@ -365,22 +364,21 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                 buttonTextStyle: TextThemeHelper
                                     .titleMediumNotoSansPrimaryContainer,
                               ),
-                              Padding(
-                                padding: getPadding(
-                                  top: 125,
-                                ),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Get.off(() => DonorSignUp());
-                                  },
+                              GestureDetector(
+                                onTap: () {
+                                  Get.off(() => DonorLogin());
+                                },
+                                child: Container(
+                                  margin: getMargin(top: 50, bottom: 20),
                                   child: Text(
                                     "Already Registered? Login",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
-                                    style: TextThemeHelper.labelLargeNotoSans,
+                                    style: TextThemeHelper.labelLargeNotoSans1,
                                   ),
                                 ),
-                              )
+                              ),
+                              // SizedBox(height: 10.Sh,),
                             ],
                           ),
                         ),
@@ -395,8 +393,4 @@ class _DonorSignUpState extends State<DonorSignUp> {
       ),
     );
   }
-}
-
-nameValidator(){
-
 }

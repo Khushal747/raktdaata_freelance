@@ -59,6 +59,7 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
     return Column(
       children: <Widget>[
         Card(
+          margin: getMargin(top: 5,bottom: 5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.r),
             side: BorderSide(
@@ -67,13 +68,13 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
             ),
           ),
           child: Container(
-            width: 400.Sw,
-            height: 410.Sh,
+            // width: 400.Sw,
+            // height: 370.Sh,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: getPadding(left: 8, top: 13, right: 8),
+                  padding: getPadding(left: 8, right: 8,top: 5),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -229,7 +230,7 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
                 ),
                 Container(
                   child: Padding(
-                    padding: getPadding(left: 2, right:2,top: 3, bottom: 2),
+                    padding: getPadding(left: 2, right:2,top: 1, bottom: 1),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -253,7 +254,7 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
                             children: <Widget>[
                               Padding(
                                 padding: getPadding(
-                                    left: 2, right: 2, top: 3, bottom: 2),
+                                    left: 2, right: 2, top: 1, bottom: 1),
                                 // const EdgeInsets.fromLTRB(0, 0, 0, 2.0),
                                 child: CustomIconButton(
                                   child: CustomImageView(
@@ -274,7 +275,7 @@ class _DisplayCardWidgetState extends State<DisplayCardWidget> {
                               ),
                               Padding(
                                 padding: getPadding(
-                                    left: 2, right: 2, top: 3, bottom: 2),
+                                    left: 2, right: 2, top: 1, bottom: 1),
                                 child: CustomIconButton(
                                   child: CustomImageView(
                                     svgPath: ImageConstant.closeCircle,

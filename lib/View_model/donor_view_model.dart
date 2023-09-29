@@ -1,9 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/donor_model.dart';
+import '../widgets/disposable_provider.dart';
 
 
-class DonorListViewModel {
+class DonorListViewModel extends DisposableProvider {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  bool _loading = false;
+
+  bool get loading => _loading;
+
+  setLoading(bool loading) {
+    _loading = loading;
+    notifyListeners();
+  }
 
   Stream<List<DonorModel>> getDonorsByBloodGroup(String bloodGroup) {
     return _firestore
@@ -23,6 +32,11 @@ class DonorListViewModel {
       return donors;
     });
   }
+
+@override
+void disposeValues() {
+  _loading = false;
+}
 }
 
 

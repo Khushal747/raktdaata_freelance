@@ -53,6 +53,23 @@ class AuthViewModelNeed extends DisposableProvider {
         return;
       }
 
+      if (mobileNumber.length != 10) {
+        Util.getSnackBar('Please enter valid mobile number'.trTrans);
+        return;
+      }
+// Check file size
+//       if (prescription!.lengthSync() > 3 * 1024 * 1024) {
+//         Util.getSnackBar('Please select a file with size less than 3MB'.trTrans);
+//         return;
+//       }
+//
+//       // Check file format
+//       String extension = prescription.path.split('.').last.toLowerCase();
+//       if (extension != 'jpg') {
+//         Util.getSnackBar('Please select a file in jpg format'.trTrans);
+//         return;
+//       }
+
       if (prescription == null) {
         Util.getSnackBar('Please choose a file'.trTrans);
         return;

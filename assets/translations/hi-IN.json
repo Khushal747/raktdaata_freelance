@@ -72,5 +72,11 @@
   "Don’t have an account ? Signup": "खाता नहीं है? साइन अप करें",
   "Hello,": "नमस्ते",
   "LogOut": "लॉग आउट",
-  "Already Registered? HomePage": "पहले से पंजीकृत? होम पृष्ठ"
+  "Already Registered? HomePage": "पहले से पंजीकृत? होम पृष्ठ",
+  "Admin Login": "व्यवस्थापक लॉगिन",
+  "Donor Login": "दानकर्ता लॉगिन",
+  "Please select a file in jpg format": "कृपया jpg प्रारूप में एक फ़ाइल चयन करें",
+  "Please select a file with size less than 3MB": "कृपया 3MB से कम आकार की फ़ाइल चयन करें"
+
+
 }

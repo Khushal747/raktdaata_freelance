@@ -10,41 +10,7 @@ import '../presentation/Frontpage/FrontPage.dart';
 import '../presentation/adminPage/adminPage.dart';
 import '../presentation/donor_page/donor_homepage.dart';
 import 'auth_helper.dart';
-//
-// class SplashScreen extends StatefulWidget {
-//   @override
-//   _SplashScreenState createState() => _SplashScreenState();
-// }
-//
-// class _SplashScreenState extends State<SplashScreen> {
-//   @override
-//   void initState() {
-//     super.initState();
-//
-//     checkLoggedInUser();
-//   }
-//
-//   void checkLoggedInUser() async {
-// //     await Future.delayed(Duration(seconds: 1));
-// //     Get.offAll(() => MessageSender());
-// // return;
-//
-//     await Future.delayed(Duration(seconds: 3));
-//     final FirebaseAuth _auth = FirebaseAuth.instance;
-//     if (_auth.currentUser != null) {
-//       // Get.offAll(() => LoginScreen());           //Include homepage here
-//       Get.offAll(
-//         () => FrontPage(),
-//         // HomePage()
-//       );
-//     } else {
-//       Get.offAll(
-//         () => FrontPage(),
-//
-//         // HomePage()
-//       );
-//     }
-//   }
+
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();

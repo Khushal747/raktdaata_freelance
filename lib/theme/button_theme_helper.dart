@@ -33,9 +33,12 @@ class ButtonThemeHelper {
             0,
           ),
           colors: [
-
+              AppColors.deepRed,
             AppColors.deepRed,
-            AppColors.deepRed,
+            // AppColors.Red400,
+            // AppColors.Red500,
+            // AppColors.Red700,
+            // AppColors.Red900,
 
             // appTheme.blueA200,
             // appTheme.purple900,

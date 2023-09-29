@@ -24,6 +24,7 @@ class CustomDrawer extends StatelessWidget {
     _authViewModel = context.watch<AuthAdminViewModel>();
 
     return Drawer(
+      // shadowColor: AppColors.deepRed,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20.0.r), // Adjust the radius as needed
@@ -36,10 +37,22 @@ class CustomDrawer extends StatelessWidget {
           DrawerHeader(
 
             decoration: BoxDecoration(
-              color: AppColors.deepRed,
+                gradient: LinearGradient(colors: [
+                  AppColors.Red300,
+                  AppColors.Red400,
+                  AppColors.Red600,
+                  AppColors.Red700,
+
+                ])
             ), //BoxDecoration
             child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: AppColors.deepRed),
+              decoration: BoxDecoration( gradient: LinearGradient(colors: [
+                AppColors.Red300,
+                AppColors.Red400,
+                AppColors.Red600,
+                AppColors.Red700,
+
+              ])),
               accountName:
               Text(
                 "Hello,".trTrans,
@@ -69,31 +82,16 @@ class CustomDrawer extends StatelessWidget {
               //   ), //Text
               // ), //circleAvatar
             ), //UserAccountDrawerHeader
-          ), //DrawerHeader
-          // Padding(
-          //   padding: getPadding(left: 50.Sw, top: 10.Sh),
-          //   child: ListTile(
-          //     leading: const Icon(Icons.person),
-          //     title: const Text(' My Profile '),
-          //     onTap: () {
-          //       Navigator.pop(context);
-          //     },
-          //   ),
-          // ),
-          // Padding(
-          //   padding: getPadding(left: 20.Sw, right: 20.Sh, top: 10.Sh),
-          //   // EdgeInsets.symmetric(horizontal: 40.0.Sw,vertical: 25.Sh),
-          //   child: const Divider(
-          //     thickness: 2,
-          //     color: Color.fromARGB(255, 204, 204, 204),
-          //   ),
-          // ),
+          ),
           Padding(
             padding: getPadding(left: 50.Sw, top: 10.Sh),
             child: ListTile(
+              // hoverColor: AppColors.deepRed,
+              // splashColor: AppColors.deepRed,
               leading:  Icon(Icons.logout,
-              color: AppColors.black,
+              // color: AppColors.black,
               ),
+              iconColor: AppColors.black,
               title:  Text('LogOut'.trTrans),
               onTap: () {
                 _authViewModel.signOut();

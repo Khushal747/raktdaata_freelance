@@ -1,5 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -31,6 +32,8 @@ class _FrontPageState extends State<FrontPage> {
 
     print(allData);
   }
+  bool isLocaleFirst = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +42,16 @@ class _FrontPageState extends State<FrontPage> {
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.deepRed,
+            color:AppColors.Red700,
+            // AppColors.deepRed,
+
+             // Colors.red.shade700,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: getPadding(top: 25,left: 335),
+                padding: getPadding(top: 35,left: 335),
                 child: CustomIconButton(
                   child: CustomImageView(
                     imagePath: ImageConstant.language,
@@ -54,9 +60,16 @@ class _FrontPageState extends State<FrontPage> {
                     width: 35.Sw,
                   ),
                   onTap: () {
+                    // if (isLocaleFirst) {
+                    //   context.setLocale(context.supportedLocales[1]);
+                    //         } else {
+                    //        context.setLocale(context.supportedLocales[0]);
+                    //      }
+                    //      isLocaleFirst = !isLocaleFirst; // Toggle the flag
+                    //      },
                     LocalizationChecker.changeLanguage(context);
                     setState(() {});
-                  },
+                  }
                 ),
               ),            // SizedBox(height: 80,),
               Padding(
@@ -92,15 +105,15 @@ class _FrontPageState extends State<FrontPage> {
                 child: Padding(
                   padding: getPadding(top: 10),
                   child: Container(
-                    width: double.maxFinite,
+                    width: double.maxFinite.Sw,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(60),
-                            topRight: Radius.circular(60))),
+                            topLeft: Radius.circular(40.r),
+                            topRight: Radius.circular(40.r))),
                     child: SingleChildScrollView(
                       child: Padding(
-                        padding: getPadding(top: 20, left: 10, right: 10),
+                        padding: getPadding(top: 10, left: 10, right: 10,),
                         child: Column(
                           children: <Widget>[
                             SizedBox(
@@ -109,10 +122,16 @@ class _FrontPageState extends State<FrontPage> {
                             // WhatsappWidget(),
                             CustomElevatedButton(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                color: AppColors.deepRed,
+                                borderRadius: BorderRadius.circular(20.r),
+                                  gradient: LinearGradient(colors: [
+                                    AppColors.Red300,
+                                    AppColors.Red400,
+                                    AppColors.Red600,
+                                    AppColors.Red700,
+
+                                  ])
                               ),
-                              height: 180.Sh,
+                              height: 190.Sh,
                               width: 350.Sw,
                               margin: getMargin(top: 5),
                               onTap: () {
@@ -147,10 +166,16 @@ class _FrontPageState extends State<FrontPage> {
 
                             CustomElevatedButton(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40),
-                                color: AppColors.deepRed,
+                                borderRadius: BorderRadius.circular(20.r),
+                                  gradient: LinearGradient(colors: [
+                                    AppColors.Red300,
+                                    AppColors.Red400,
+                                    AppColors.Red600,
+                                    AppColors.Red700,
+
+                                  ])
                               ),
-                              height: 180.Sh,
+                              height: 190.Sh,
                               width: 350.Sw,
                               text: "Need".trTrans,
                               leftIcon:  Icon(
@@ -182,10 +207,17 @@ class _FrontPageState extends State<FrontPage> {
 
                             CustomElevatedButton(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(40.r),
-                                color: AppColors.deepRed,
+                                borderRadius: BorderRadius.circular(20.r),
+                                // color:AppColors.deepRed,
+                                gradient: LinearGradient(colors: [
+                                  AppColors.Red300,
+                                  AppColors.Red400,
+                                  AppColors.Red600,
+                                  AppColors.Red700,
+
+                                ])
                               ),
-                              height: 180.Sh,
+                              height: 190.Sh,
                               width: 350.Sw,
                               text: "Admin".trTrans,
                               leftIcon:  Icon(
@@ -214,9 +246,9 @@ class _FrontPageState extends State<FrontPage> {
                               ),
 
                             ),
-                            SizedBox(
-                              height: 20.Sh,
-                            ),
+                            // SizedBox(
+                            //   height: 10.Sh,
+                            // ),
 
                           ],
                         ),

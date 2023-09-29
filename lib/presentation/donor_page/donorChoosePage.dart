@@ -20,6 +20,18 @@ class DonorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Get.back();
+            // Handle the back button press here
+          },
+          color: AppColors.black,
+        ),
+        backgroundColor: Colors.transparent, // Set the background color to transparent
+        elevation: 0, // Remove the shadow
+      ),
       body: SafeArea(
         child: Padding(
           padding: getPadding(left: 20,right: 20,top: 40),
@@ -72,6 +84,7 @@ class DonorPage extends StatelessWidget {
                 ),
               ),
               Container(
+                margin: getMargin(bottom: 20),
                 height: 60.Sh,
                 decoration: BoxDecoration(
                   color: AppColors.deepRed,
@@ -84,7 +97,7 @@ class DonorPage extends StatelessWidget {
                         bgColor: Colors.white,
                         buttonName: 'Login'.trTrans,
                         onTap: () {
-                          Get.to(() => Donor_Login());
+                          Get.to(() => DonorLogin());
                         },
                         textColor: AppColors.black,
                       ),

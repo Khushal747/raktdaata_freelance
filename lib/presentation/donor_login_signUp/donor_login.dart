@@ -21,14 +21,14 @@ import '../widgets/custom_progress_bar.dart';
 import 'donor_signUp.dart';
 
 
-class Donor_Login extends StatefulWidget {
-  const Donor_Login({Key? key}) : super(key: key);
+class DonorLogin extends StatefulWidget {
+  const DonorLogin({Key? key}) : super(key: key);
 
   @override
-  State<Donor_Login> createState() => _Donor_LoginState();
+  State<DonorLogin> createState() => _DonorLoginState();
 }
 
-class _Donor_LoginState extends State<Donor_Login> {
+class _DonorLoginState extends State<DonorLogin> {
   var _scaffoldkey = GlobalKey<ScaffoldState>();
 
 
@@ -50,13 +50,13 @@ class _Donor_LoginState extends State<Donor_Login> {
       key: _scaffoldkey,
       appBar: AppBar(
         title: Text(
-          "Login".trTrans,
+          "Donor Login".trTrans,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.left,
           style: TextThemeHelper.titleBoldPrimaryContainer_3,
         ),
 
-        backgroundColor: Colors.red.shade900,
+        backgroundColor: AppColors.Red700,
         centerTitle: true,
       ),
       body: CustomProgressBar(
@@ -178,26 +178,26 @@ class _Donor_LoginState extends State<Donor_Login> {
                       buttonTextStyle:
                       TextThemeHelper.titleMediumNotoSansPrimaryContainer,
                     ),
+                    // Align(
+                    //   alignment: Alignment.center,
+                    //   child: Padding(
+                    //     padding: getPadding(
+                    //       top: 13,
+                    //     ),
+                    //     child: Text(
+                    //       "Forgot password ?".trTrans,
+                    //       overflow: TextOverflow.ellipsis,
+                    //       textAlign: TextAlign.left,
+                    //       style: TextThemeHelper
+                    //           .titleSmallNotoSansPrimaryContainer,
+                    //     ),
+                    //   ),
+                    // ),
                     Align(
                       alignment: Alignment.center,
                       child: Padding(
                         padding: getPadding(
-                          top: 13,
-                        ),
-                        child: Text(
-                          "Forgot password ?".trTrans,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: TextThemeHelper
-                              .titleSmallNotoSansPrimaryContainer,
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: getPadding(
-                          top: 152,
+                          top: 20,
                         ),
                         child: GestureDetector(
                           onTap: () {

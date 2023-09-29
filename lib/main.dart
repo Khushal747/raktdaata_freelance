@@ -56,6 +56,7 @@ Future<void> main() async {
           supportedLocales:  [Locale('en', 'US'), Locale('hi', 'IN')],
           path: 'assets/translations', // <-- change the path of the translation files
           fallbackLocale:  Locale('en', 'US'),
+          startLocale: Locale('en', 'US'),
           child: ConfigScreen()
       )
   );

@@ -31,7 +31,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             widget.onTap();
           },
           child: Container(
-            padding: widget.padding ?? getPadding(all: 20),
+            padding: widget.padding ?? getPadding(all: 8),
             child: widget.child,
           ),
         ),

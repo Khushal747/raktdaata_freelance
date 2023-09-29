@@ -128,7 +128,7 @@ class AuthViewModel extends DisposableProvider {
         'bloodDonationDate': bloodDonationDate,
         'mobileNumber':mobileNumber,
       });
-      Get.off(() => Donor_Login());
+      Get.off(() => DonorLogin());
     } catch (e) {
       String errorMessage = 'Error signing up. Please try again.'.trTrans;
 

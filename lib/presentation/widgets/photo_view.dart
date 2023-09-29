@@ -10,7 +10,7 @@ class ZoomableImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pop(); // Close the zoomed image on tap
+        // Navigator.of(context).pop(); // Close the zoomed image on tap
       },
       child: Container(
         color: Colors.black, // Background color

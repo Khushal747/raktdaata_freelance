@@ -69,18 +69,17 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
   User? currentU;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-
   String selectedBloodGroup = AppStrings.NA;
   DateTime selectedDate = DateTime.now();
 
   File? prescription = null; // Define a variable to store the picked file
 
   @override
-
-  void initState(){
+  void initState() {
     super.initState();
     currentU = _auth.currentUser;
   }
+
   Widget build(BuildContext context) {
     _authViewModel = context.watch<AuthViewModelNeed>();
     return Scaffold(
@@ -92,7 +91,8 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
           textAlign: TextAlign.left,
           style: TextThemeHelper.titleBoldPrimaryContainer_3,
         ),
-        backgroundColor: Colors.red.shade900,
+        backgroundColor:AppColors.Red700,
+        // Colors.red.shade600 ,
         centerTitle: true,
       ),
       body: Container(
@@ -147,6 +147,7 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
                                 maxLines: 1,
                                 textInputAction: TextInputAction.next,
                                 textInputType: TextInputType.text,
+                                // onlyText: true,
                                 applyValidator: true,
                               ),
                               CustomTextFormField_1(
@@ -222,7 +223,6 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
                                     'A2B-',
                                     'Bombay Blood Group',
                                     'INRA',
-                                    'Don\'t Know'
                                   ],
                                   selectedItem: selectedBloodGroup,
                                   applyValidator: true,
@@ -246,6 +246,7 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
                                   // bottom: 17,
                                 ),
                                 textInputType: TextInputType.number,
+                                onlyNumber: true,
                                 textInputAction: TextInputAction.next,
                                 applyValidator: true,
                               ),
@@ -287,8 +288,10 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
                                   // bottom: 17,
                                 ),
                                 textInputType: TextInputType.phone,
+                                onlyNumber: true,
                                 textInputAction: TextInputAction.next,
                                 applyValidator: true,
+
                               ),
                               CustomTextFormField_1(
                                 onDateSelected: (DateTime pickedDate) {
@@ -369,15 +372,13 @@ class _RequirementSignUpState extends State<RequirementSignUp> {
                                       bloodUnitController.text,
                                       attenderNameController.text,
                                       prescription!,
-                                        // currentU,
-
+                                      // currentU,
                                     );
-
                                   } else {
                                     // Display a snackbar to inform the user
-                                    Util.getSnackBar('Please upload a prescription'.trTrans);
+                                    Util.getSnackBar(
+                                        'Please upload a prescription'.trTrans);
                                   }
-
                                 },
                                 buttonStyle: ButtonThemeHelper
                                     .gradientnameblueA200namepurple900
