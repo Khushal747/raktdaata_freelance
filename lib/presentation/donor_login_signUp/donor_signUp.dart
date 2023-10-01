@@ -371,7 +371,7 @@ class _DonorSignUpState extends State<DonorSignUp> {
                                 child: Container(
                                   margin: getMargin(top: 50, bottom: 20),
                                   child: Text(
-                                    "Already Registered? Login",
+                                    "Already Registered? Login".trTrans,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: TextThemeHelper.labelLargeNotoSans1,

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:raktdata_app/core/app_colors.dart';
 import 'package:raktdata_app/core/app_export.dart';
+import 'package:raktdata_app/presentation/widgets/custom_progress_bar.dart';
 import 'package:raktdata_app/widgets/custom_icon_button.dart';
 import 'package:raktdata_app/widgets/size_ext.dart';
 import 'package:raktdata_app/widgets/translate_extension.dart';
@@ -68,7 +69,7 @@ class _FrontPageState extends State<FrontPage> {
                     //      isLocaleFirst = !isLocaleFirst; // Toggle the flag
                     //      },
                     LocalizationChecker.changeLanguage(context);
-                    setState(() {});
+                     setState(() {});
                   }
                 ),
               ),            // SizedBox(height: 80,),
@@ -263,4 +264,10 @@ class _FrontPageState extends State<FrontPage> {
       );
 
   }
+  //  reloadPage() {
+  //   setState(() {
+  //     // This will trigger a rebuild of the UI
+  //   });
+  // }
 }
+

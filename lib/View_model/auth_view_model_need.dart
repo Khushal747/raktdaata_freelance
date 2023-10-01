@@ -129,31 +129,7 @@ class AuthViewModelNeed extends DisposableProvider {
           'attendersName': attendersName,
           // 'prescription':prescription,
         };
-        // final needData = {
-        //   if (validatePatientName(patientName)) 'patientName': patientName,
-        //   if (disease.isNotEmpty) 'disease': disease,
-        //   if (validateHospitalName(hospitalName)) 'hospitalName': hospitalName,
-        //   if (validateIndianPhoneNumber(mobileNumber)) 'mobileNumber': mobileNumber,
-        //   if (validateCityName(city)) 'city': city,
-        //   if (bloodGroup != AppStrings.NA) 'bloodGroup': bloodGroup,
-        //   if (bloodUnits.isNotEmpty) 'bloodUnits': bloodUnits,
-        //   if (validateAttenderName(attendersName)) 'attendersName': attendersName,
-        //   'date': date, // Assuming date is always provided
-        // };
 
-        // final invalidFields = needData.entries.where((entry) => entry.value == null || entry.value == '');
-        // All fields have valid values, proceed with other operations
-
-        // Add a reference to the prescription file
-        // try {
-        //   print("enterd try1");
-        //
-        //   final prescriptionUrl = await uploadPrescription(user.uid, prescription);
-        //   needData['prescriptionUrl'] = prescriptionUrl;
-        //   print("uploaded then ehat");
-        // } catch (error) {
-        //   print('Error uploading prescription: $error');
-        // }
 
         print("222222222222222222222222222");
         print('Generated needData: $needData');
@@ -180,29 +156,15 @@ class AuthViewModelNeed extends DisposableProvider {
         // List<String> phoneNumbers = ['917477015841', '918770820133', '919399767395'];
         // await sendWhatsAppMessage(phoneNumbers);
 
-          await sendWhatsAppMessage();
+        //from here whatsapp messages will called
+          // await sendWhatsAppMessage();
 
         Util.getSnackBar(
           'You have successfully registered!'.trTrans,
           color: AppColors.lightGreen,
           // Set the text color
         );
-        // Assuming you have a ViewModel instance
-        // Stream<List<DonorModel>> aPositiveDonorsStream =
-        // DonorListViewModel().getDonorsByBloodGroup('A+');
-        //below is the code to call below 2 numbers
 
-    //     DonorListViewModel().getDonorsByBloodGroup(bloodGroup).listen((List<DonorModel> donors) {
-    // List<String> mobileNumbers = donors.map((donor) => donor.mobileNumber).toList();});
-
-        // aPositiveDonorsStream.listen((donors) {
-        //   // Do something with the list of donors
-        //   // For example, update UI, perform calculations, etc.
-        //   print('Received ${donors.length} A+ donors.');
-        //   for (var donor in donors) {
-        //     print('Name: ${donor.name}, Number: ${donor.number}');
-        //   }
-        // });
         Get.off(() => FrontPage());
         setLoading(false);
 
